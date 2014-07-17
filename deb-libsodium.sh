@@ -41,18 +41,22 @@ echo "Architecture: all" >> debian/control
 echo "Depends: ${shlibs:Depends}, ${misc:Depends}, libsodium(= $DEBVERSION)" >> debian/control
 echo "Homepage: https://libsodium.org" >> debian/control
 echo "Description: libsodium development files" >> debian/control
-#Rules files
+
+
+#Rules files, keep it simple
 echo '#!/usr/bin/make -f' > debian/rules
 echo '%:' >> debian/rules
 echo -e '\tdh $@' >> debian/rules
-echo 'override_dh_auto_configure:' >> debian/rules
-echo -e "\t./configure --prefix=$(pwd)/debian/$NAME/usr" >> debian/rules
-echo 'override_dh_auto_build:' >> debian/rules
-echo -e '\tmake' >> debian/rules
-echo 'override_dh_auto_install:' >> debian/rules
-echo -e "\tmkdir -p debian/$NAME/usr debian/$NAME-dev/usr" >> debian/rules
-echo -e "\tmake install" >> debian/rules
-echo -e "\tmv debian/$NAME/usr/include debian/$NAME-dev/usr" >> debian/rules
+
+# skip the rest
+#echo 'override_dh_auto_configure:' >> debian/rules
+#echo -e "\t./configure --prefix=$(pwd)/debian/$NAME/usr" >> debian/rules
+#echo 'override_dh_auto_build:' >> debian/rules
+#echo -e '\tmake' >> debian/rules
+#echo 'override_dh_auto_install:' >> debian/rules
+#echo -e "\tmkdir -p debian/$NAME/usr debian/$NAME-dev/usr" >> debian/rules
+#echo -e "\tmake install" >> debian/rules
+#echo -e "\tmv debian/$NAME/usr/include debian/$NAME-dev/usr" >> debian/rules
 #Create some misc files
 mkdir -p debian/source
 echo "8" > debian/compat
