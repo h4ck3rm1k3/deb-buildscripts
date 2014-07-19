@@ -1,0 +1,9 @@
+Package: libsodium
+Version: 0.4.5-1
+Architecture: amd64
+Maintainer: None <none@example.com>
+Installed-Size: 371
+Section: misc
+Priority: optional
+Homepage: https://libsodium.org
+Description: libsodium

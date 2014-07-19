@@ -1,0 +1,11 @@
+Package: libsodium-dev
+Source: libsodium
+Version: 0.4.5-1
+Architecture: all
+Maintainer: None <none@example.com>
+Installed-Size: 856
+Depends: libsodium (= 0.4.5-1)
+Section: misc
+Priority: optional
+Homepage: https://libsodium.org
+Description: libsodium development files

@@ -53,10 +53,10 @@ echo -e '\tdh $@' >> debian/rules
 #echo -e "\t./configure --prefix=$(pwd)/debian/$NAME/usr" >> debian/rules
 #echo 'override_dh_auto_build:' >> debian/rules
 #echo -e '\tmake' >> debian/rules
-#echo 'override_dh_auto_install:' >> debian/rules
-#echo -e "\tmkdir -p debian/$NAME/usr debian/$NAME-dev/usr" >> debian/rules
-#echo -e "\tmake install" >> debian/rules
-#echo -e "\tmv debian/$NAME/usr/include debian/$NAME-dev/usr" >> debian/rules
+echo 'override_dh_auto_install:' >> debian/rules
+echo -e "\tmkdir -p debian/$NAME/usr debian/$NAME-dev/usr" >> debian/rules
+echo -e "\tdh_auto_install" >> debian/rules
+echo -e "\tmv debian/tmp/usr/include debian/$NAME-dev/usr" >> debian/rules
 #Create some misc files
 mkdir -p debian/source
 echo "8" > debian/compat
